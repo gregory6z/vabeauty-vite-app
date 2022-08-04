@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const ContainerSignUp = styled.div`
   display: flex;
-  padding-top: 1rem;
+
   justify-content: center;
   flex: 1;
   height: 100%;
@@ -12,13 +12,13 @@ export const ContainerSignUp = styled.div`
   }
 
   > div {
-    width: 60%;
+    width: 100%;
+    padding: 4rem 7rem;
 
     @media (max-width: 768px) {
       flex: initial;
       height: initial;
       width: 90%;
- 
     }
   }
 `;
@@ -39,13 +39,15 @@ export const FormContainer = styled.form`
   }
 
   h3 {
+    margin-bottom: 2.2rem;
     font-size: 1.125rem;
     letter-spacing: 0.08rem;
     color: ${({ theme }) => theme["cyan-500"]};
   }
+
   label {
     color: ${({ theme }) => theme["gray-700"]};
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     margin-top: 0.25rem;
   }
 
@@ -53,13 +55,8 @@ export const FormContainer = styled.form`
     margin-top: 0.5rem;
   }
 
-  h3 {
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
   input {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     padding: 0.5rem 1rem;
     border-radius: 7px;
 
@@ -77,7 +74,7 @@ export const FormContainer = styled.form`
   button {
     letter-spacing: 0.08rem;
     border: ${({ theme }) => theme["pink-500"]} 2px solid;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     padding: 0.875rem;
     border-radius: 7px;
     cursor: pointer;
@@ -93,7 +90,7 @@ export const FormContainer = styled.form`
     &:hover {
       color: ${({ theme }) => theme.white};
       border: 2px solid transparent;
-      background: ${({ theme }) => theme["pink-500"]};
+      background: ${({ theme }) => theme["pink-700"]};
     }
   }
 `;

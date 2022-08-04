@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components";
 
-import { darken } from "polished";
-
 export const ContainerSignIn = styled.div`
   background: ${({ theme }) => theme["cyan-500"]};
 
@@ -14,6 +12,10 @@ export const ContainerSignIn = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media (min-width: 1025px) {
+    overflow: auto;
+  }
 
   img {
     margin-top: 4rem;
@@ -46,11 +48,11 @@ export const FormContainer = styled.form`
   flex-direction: column;
 
   h3 {
-    color: ${({ theme }) => theme["gray-100"]};
+    color: ${({ theme }) => theme["cyan-200"]};
     letter-spacing: 0.08rem;
   }
   label {
-    color: ${({ theme }) => theme["cyan-100"]};
+    color: ${({ theme }) => theme["cyan-200"]};
   }
 
   label + input {
@@ -69,28 +71,30 @@ export const FormContainer = styled.form`
     padding: 0.5rem 1rem;
     border-radius: 7px;
 
-    background: ${(props) => props.theme["gray-100"]};
     outline: transparent;
     border: 2px transparent solid;
-
-    &:focus {
-      outline: transparent;
-      border: 2px solid ${(props) => props.theme["pink-500"]};
-
-      box-shadow: 0 0 0 2px white;
-    }
   }
 
   a {
     margin-top: 0.5rem;
     font-size: 0.75rem;
     color: ${({ theme }) => theme["gray-300"]};
+    padding-bottom:0.25rem ;
 
     transition: color 200ms;
 
     &:hover {
       color: ${({ theme }) => theme["gray-100"]};
     }
+  }
+
+  p {
+    font-size: 0.75rem;
+    color: #fff;
+    font-weight: bold;
+
+
+    position: absolute;
   }
 
   button {
@@ -107,7 +111,37 @@ export const FormContainer = styled.form`
     transition: background-color 200ms;
 
     &:hover {
-      background: ${darken(0.05, "#e3a6b7")};
+      background: ${({ theme }) => theme["pink-700"]};
     }
   }
+`;
+
+interface InputContainerProps {
+  hasError: boolean;
+}
+
+export const Input = styled.input<InputContainerProps>`
+  &:focus {
+    outline: transparent;
+    border: 2px solid ${(props) => props.theme["pink-500"]};
+
+    box-shadow: 0 0 0 2px white;
+  }
+
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      background: #fb8484;
+      color: ${(props) => props.theme["gray-50"]};
+      &::placeholder {
+        color: ${(props) => props.theme["gray-200"]};
+      }
+      &:focus {
+        outline: transparent;
+
+        border: 2px solid transparent;
+        box-shadow: 0 0 0 2px ${(props) => props.theme["gray-50"]};
+        color: ${(props) => props.theme["gray-50"]};
+      }
+    `};
 `;

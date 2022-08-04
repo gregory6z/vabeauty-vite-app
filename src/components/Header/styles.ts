@@ -30,8 +30,6 @@ export const NavContainer = styled.nav`
   align-items: center;
   justify-content: center;
 
-  display: none;
-
   a {
     text-decoration: none;
     padding: 0 0.5rem;

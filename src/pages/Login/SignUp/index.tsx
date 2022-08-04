@@ -71,9 +71,7 @@ export function SignUp() {
           <FormContainer onSubmit={handleSubmit(onSubmit)}>
             <h3>CRÉER UN COMPTE</h3>
 
-            {errorForm ? (
-              <p>*Mail déjà enregistré essayez-en un autre</p>
-            ) : null}
+            {errorForm && <p>*Mail déjà enregistré essayez-en un autre</p>}
 
             <label htmlFor="">Nom</label>
             <Input
