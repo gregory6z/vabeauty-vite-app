@@ -4,10 +4,10 @@ import { Container } from "./styles";
 
 export function Login() {
   return (
-    <Container>
+    <Container data-aos="fade-right">
       <div className="container">
-        <SignUp />
-        <SignIn />
+        <SignUp data-aos="fade-right" />
+        <SignIn data-aos="fade-right" />
       </div>
     </Container>
   );

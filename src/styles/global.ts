@@ -43,8 +43,20 @@ export const GlobalStyle = createGlobalStyle`
 
 
   body{
-    background: ${(props) => props.theme["cyan-100"]};
+    /* background: ${(props) => props.theme["cyan-750"]} ; */
+    background: ${(props) => props.theme["gray-100"]} ;
     color: ${(props) => props.theme["gray-900"]};
+    input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+   
+
+}
+    
+}
+
   }
 
   body,

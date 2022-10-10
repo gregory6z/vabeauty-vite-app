@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { api } from "../../../services/api";
 import { useState } from "react";
 import { AccountSuccess } from "../AccountSuccess";
+import { UserCirclePlus } from "phosphor-react";
 
 interface SignUpFormData {
   name: string;
@@ -22,7 +23,12 @@ const schema = yup
       .string()
       .email("Entrez une adresse mail valide")
       .required("Mail obrigatoire"),
-    telephone: yup.string().required("Telephone obrigatoire"),
+    telephone: yup
+      .string()
+      .required("Telephone obrigatoire")
+      .min(10, "Must be exactly 5 digits")
+      .max(10, "Must be exactly 5 digits"),
+
     password: yup
       .string()
       .min(6, "Le mot de passe doit contenir au moins 6 caractères")
@@ -93,7 +99,7 @@ export function SignUp() {
 
             <label htmlFor="">Telephone</label>
             <Input
-              type="text"
+              type="number"
               placeholder="06 06 06 06 06"
               hasError={!!errors.telephone?.message}
               {...register("telephone")}
@@ -118,7 +124,10 @@ export function SignUp() {
             />
             <span>{errors.passwordConfirmation?.message}</span>
 
-            <button>S'INSCRIRE</button>
+            <button>
+              <UserCirclePlus size={22} />
+              INSCRIVE-VOUS
+            </button>
           </FormContainer>
         )}
       </div>

@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 
 export const ContainerSignIn = styled.div`
-  background: ${({ theme }) => theme["cyan-500"]};
+  background: ${({ theme }) => theme["cyan-750"]};
 
-  border: 0.2px solid rgb(218, 218, 218);
-  border-radius: 0 7px 7px 0;
+  border-end-end-radius: 12px;
+  border-top-right-radius: 12px;
 
   flex: 1;
 
@@ -49,7 +49,8 @@ export const FormContainer = styled.form`
 
   h3 {
     color: ${({ theme }) => theme["cyan-200"]};
-    letter-spacing: 0.08rem;
+    letter-spacing: 0.1rem;
+    font-size: 1.5rem;
   }
   label {
     color: ${({ theme }) => theme["cyan-200"]};
@@ -70,16 +71,22 @@ export const FormContainer = styled.form`
   input {
     padding: 0.5rem 1rem;
     border-radius: 7px;
+    background: ${({ theme }) => theme["cyan-600"]};
+    color: white;
 
     outline: transparent;
     border: 2px transparent solid;
+
+    &::placeholder {
+      color: ${({ theme }) => theme["gray-200"]};
+    }
   }
 
   a {
     margin-top: 0.5rem;
     font-size: 0.75rem;
     color: ${({ theme }) => theme["gray-300"]};
-    padding-bottom:0.25rem ;
+    padding-bottom: 0.25rem;
 
     transition: color 200ms;
 
@@ -93,25 +100,30 @@ export const FormContainer = styled.form`
     color: #fff;
     font-weight: bold;
 
-
     position: absolute;
   }
 
   button {
-    letter-spacing: 0.08rem;
+    letter-spacing: 0.1rem;
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 7px;
     border: 0;
     font-weight: 700;
     color: ${({ theme }) => theme.white};
-    background: ${({ theme }) => theme["pink-500"]};
+
+    background: ${({ theme }) => theme["pink-700"]};
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 
     transition: background-color 200ms;
 
     &:hover {
-      background: ${({ theme }) => theme["pink-700"]};
+      background: #d78097;
     }
   }
 `;
@@ -123,9 +135,8 @@ interface InputContainerProps {
 export const Input = styled.input<InputContainerProps>`
   &:focus {
     outline: transparent;
-    border: 2px solid ${(props) => props.theme["pink-500"]};
 
-    box-shadow: 0 0 0 2px white;
+    box-shadow: 0 0 0 3px ${(props) => props.theme["pink-800"]};
   }
 
   ${({ hasError }) =>
@@ -140,7 +151,7 @@ export const Input = styled.input<InputContainerProps>`
         outline: transparent;
 
         border: 2px solid transparent;
-        box-shadow: 0 0 0 2px ${(props) => props.theme["gray-50"]};
+        box-shadow: 0 0 0 3px ${(props) => props.theme["red-error"]};
         color: ${(props) => props.theme["gray-50"]};
       }
     `};

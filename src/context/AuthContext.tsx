@@ -2,17 +2,16 @@ import {
   createContext,
   ReactNode,
   useContext,
-  useCallback,
   useState,
   useEffect,
 } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { api } from "../services/api";
 
 export interface IUser {
   name: string;
   token: string;
+  id: string;
 }
 
 interface SignInCredentials {
@@ -43,10 +42,11 @@ export function AuthProvider({ children }: AuthContextProviderProps) {
   useEffect(() => {
     const token = localStorage.getItem("@VaBeauty1.0:token");
     const name = localStorage.getItem("@VaBeauty1.0:name");
+    const id = localStorage.getItem("@VaBeauty1.0:id");
 
-    if (token && name) {
+    if (token && name && id) {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-      setUser({ token, name });
+      setUser({ token, name, id });
     }
     setLoading(false);
   }, []);
@@ -57,19 +57,19 @@ export function AuthProvider({ children }: AuthContextProviderProps) {
         email,
         password,
       });
-      console.log(response.data);
-      const { name, token } = response.data;
 
-      console.log(response.data);
+      const { name, token, id } = response.data;
 
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
       localStorage.setItem("@VaBeauty1.0:token", token);
       localStorage.setItem("@VaBeauty1.0:name", name);
+      localStorage.setItem("@VaBeauty1.0:id", id);
 
       setUser({
         name,
         token,
+        id,
       });
     } catch (err) {
       setError(true);
@@ -80,6 +80,7 @@ export function AuthProvider({ children }: AuthContextProviderProps) {
     setUser(null);
     localStorage.removeItem("@VaBeauty1.0:token");
     localStorage.removeItem("@VaBeauty1.0:name");
+    localStorage.removeItem("@VaBeauty1.0:id");
     api.defaults.headers.common["Authorization"] = false;
   }
 

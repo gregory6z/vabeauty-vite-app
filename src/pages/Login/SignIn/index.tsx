@@ -5,7 +5,8 @@ import * as yup from "yup";
 import logoImg from "../../../assets/logoLogin.svg";
 import { useAuth } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { SignIn as ButtonSignIn } from "phosphor-react";
 
 interface SignInFormData {
   email: string;
@@ -28,7 +29,7 @@ const schema = yup
 
 export function SignIn() {
   const navigate = useNavigate();
-  const { signIn, isLoading, isAuthenticated, user, error } = useAuth();
+  const { signIn, isAuthenticated, user, error } = useAuth();
 
   useEffect(() => {
     if (user) {
@@ -86,12 +87,12 @@ export function SignIn() {
           <a href="">Mot de passe oublie ?</a>
           <div>{error && <p>Mail ou mot de passe incorrect</p>}</div>
 
-          <button type="submit">CONNECTER</button>
+          <button type="submit">
+            <ButtonSignIn size="22" />
+            CONNECTER
+          </button>
         </FormContainer>
       </div>
     </ContainerSignIn>
   );
-}
-function useHistory() {
-  throw new Error("Function not implemented.");
 }

@@ -1,0 +1,84 @@
+import { useEffect, useState } from "react";
+
+import { api } from "../../services/api";
+import { Banner } from "./Banner";
+import { Services } from "./Services";
+import {
+  ServiceContainer,
+  ServiceCardContainer,
+  ServicesContainer,
+} from "./styles";
+
+interface IServicesTitle {
+  id: string;
+  name: string;
+  Services: IService[];
+}
+export interface IService {
+  id: string;
+  name: string;
+  price: number;
+  time: number;
+  descriptions: string[];
+}
+interface IServicesTitle {
+  id: string;
+  name: string;
+  Services: IService[];
+}
+export function Sourcils() {
+  const [services, setServices] = useState<IServicesTitle[]>([]);
+
+  async function fetchService() {
+    const response = await api.get("service-header", {
+      params: {
+        category: "18defe4f-ceb6-4fd3-8f71-c5530cc388df",
+      },
+    });
+    setServices(response.data);
+  }
+
+  useEffect(() => {
+    fetchService();
+  }, []);
+
+  return (
+    <>
+      <Banner />
+      <ServicesContainer>
+        {services.map((service) => {
+          return (
+            <ServiceContainer key={service.id}>
+              <div>
+                <h1>{service.name}</h1>
+                <div className="Container">
+                  <div
+                    className="imgContainer"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                  >
+                    <img src="/sourcils/sourcil8.png" />
+                  </div>
+                  <ServiceCardContainer>
+                    {service.Services.map((service) => {
+                      return (
+                        <Services
+                          key={service.id}
+                          id={service.id}
+                          duration={service.time}
+                          name={service.name}
+                          price={service.price}
+                          descriptions={service.descriptions}
+                        />
+                      );
+                    })}
+                  </ServiceCardContainer>
+                </div>
+              </div>
+            </ServiceContainer>
+          );
+        })}
+      </ServicesContainer>
+    </>
+  );
+}

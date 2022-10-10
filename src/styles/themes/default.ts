@@ -5,21 +5,32 @@ export const defaultTheme = {
   "gray-200": "#d9e3e3",
   "gray-300": "#cdd8da",
   "gray-700": "#495057",
+  "gray-800": "#49595c",
   "gray-900": "#212529",
 
-  "cyan-100": "#eaf0f2",
+  "cyan-100": "#ecfeff",
+  // "cyan-100": "#d4efee",
   "cyan-200": "#C9ECF3",
-  "cyan-500": "#3B8EA4",
+  "cyan-300": "#5993A3",
 
-  "cyan-600": "#6a8b93",
+  // "cyan-500": "#3B8EA4",
+  "cyan-500": "#06b6d4",
+  // "cyan-600": "#2e6e7e",
+  "cyan-600": "#0891b2",
   "cyan-700": "#35697D",
-  "cyan-800": "#49595c",
+  "cyan-750": "#164e63",
+  "cyan-800": "#1e3c47",
 
+  "pink-100": "#FBF2F4",
   "pink-300": "#FDDEE7",
-  "pink-500": "#e3a6b7",
+  "pink-400": "#FDCFDD",
+  "pink-500": "#fcc6d6",
+  // "pink-600": "#febbc7",
+  "pink-600": "#fbaec5",
+  // "pink-500": "#e3a6b7",
   "pink-700": "#dd93a7",
-
+  "pink-800": "#d78097",
   "green-500": "#00856f",
 
   "red-error": "#FB8484",
-};
+} as const;

@@ -8,7 +8,7 @@ import { SuccessContainer, SocialMedia } from "./styles";
 
 export function AccountSuccess() {
   return (
-    <SuccessContainer>
+    <SuccessContainer data-aos="fade-left">
       <div>
         <Check size={140} />
         <h1>MERCI POUR VOTRE INSCRIPTION </h1>

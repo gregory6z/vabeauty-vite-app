@@ -1,11 +1,14 @@
 import styled, { css } from "styled-components";
 
 export const SuccessContainer = styled.div`
+  background-color: ${({ theme }) => theme["cyan-100"]};
+  border-radius: 12px;
   > div {
     margin-bottom: 2rem;
     width: 100%;
     display: flex;
-    padding-top: 6rem;
+    padding: 1.5rem 3rem;
+   
 
     flex-direction: column;
 
@@ -15,7 +18,7 @@ export const SuccessContainer = styled.div`
     }
 
     svg {
-      color: ${({ theme }) => theme["pink-500"]};
+      color: ${({ theme }) => theme["pink-800"]};
       margin: 0 auto;
       margin-bottom: 1rem;
     }
@@ -24,7 +27,7 @@ export const SuccessContainer = styled.div`
       font-weight: 700;
       font-size: 18px;
       line-height: 150%;
-      color: ${({ theme }) => theme["pink-500"]};
+      color: ${({ theme }) => theme["pink-800"]};
       letter-spacing: 0.08rem;
       margin-bottom: 1.5rem;
     }
@@ -47,7 +50,7 @@ export const SuccessContainer = styled.div`
 `;
 
 export const SocialMedia = styled.div`
-  color: ${({ theme }) => theme["pink-500"]};
+  color: ${({ theme }) => theme["pink-800"]};
   display: flex;
   justify-content: flex-end;
   width: 30%;
