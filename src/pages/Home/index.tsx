@@ -13,6 +13,7 @@ import { Footer } from "../../components/Footer";
 import { Contact } from "./Contact";
 import { useEffect } from "react";
 import { Depositions } from "./Depositions";
+import { Reveal } from "../../components/ScrollReveal/ScrollReveal";
 
 export function Home() {
   useEffect(() => {
@@ -23,18 +24,22 @@ export function Home() {
     <HomeContainer className="#home">
       <Hero />
       <AboutUsContainer>
-        <AboutUsHeader data-aos="fade-left" data-aos-duration="800">
+      <Reveal origin="top">
+        <AboutUsHeader >
+        
           <span>À PROPOS</span>
           <p>
             Ayez un visuelle impeccable grâce à VA Beauty. Nous offrons un
             service de qualité à la hauteur de vos attentes.!
           </p>
-        </AboutUsHeader>
+        </AboutUsHeader></Reveal>
+
+        <Reveal origin="left" delay={200}>
         <AboutUsVaBeauty>
+        
           <div
             className="textContainer"
-            data-aos="fade-left"
-            data-aos-duration="800"
+           
           >
             <h1>VA Beauty</h1>
             <div>
@@ -58,32 +63,32 @@ export function Home() {
           </div>
           <div
             className="imgContainer"
-            data-aos="fade-right"
-            data-aos-duration="1000"
+       
           >
+        
             <img src={salonImg} alt="" />
           </div>
-        </AboutUsVaBeauty>
+        </AboutUsVaBeauty></Reveal>
       </AboutUsContainer>
+      <Reveal origin="top"  delay={200}>
       <img
         src="/sourcils/marcas.svg"
         width="100%"
-        data-aos="fade-down"
-        data-aos-duration="800"
-      />
+      
+      /></Reveal>
       <AboutUsContainer>
+      <Reveal origin="left"  delay={200}>
+        
         <AboutUsValesca>
           <div
             className="imgContainer"
-            data-aos="fade-left"
-            data-aos-duration="1000"
+           
           >
             <img src={valescaImg} width="340px" />
           </div>
           <div
             className="specifications"
-            data-aos="fade-right"
-            data-aos-duration="800"
+           
           >
             <h3>Valesca Vieira</h3>
             <strong>
@@ -100,12 +105,12 @@ export function Home() {
               mollit non deserunt ullamco est sit aliqua dolor do amet sint.
             </p>
           </div>
-        </AboutUsValesca>
+        </AboutUsValesca></Reveal>
       </AboutUsContainer>
 
       {/* <Depositions /> */}
-
-      <Contact />
+      <Reveal origin="top">
+      <Contact /></Reveal>
       <Footer />
     </HomeContainer>
   );

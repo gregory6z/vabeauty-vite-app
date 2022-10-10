@@ -7,6 +7,7 @@ export function Banner() {
       <h1>Sourcils</h1>
       <LazyLoadImage
         height="100%"
+        
         effect="blur"
         src="/sourcils/SourcilsBannerImg.png"
         alt=""

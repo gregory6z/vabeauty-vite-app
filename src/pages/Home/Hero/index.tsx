@@ -9,12 +9,17 @@ import womanImg from "../../../assets/valescaImg.png";
 import { CalendarCheck } from "phosphor-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import { useNavigate } from "react-router-dom";
+import { Reveal } from "../../../components/ScrollReveal/ScrollReveal";
+
 
 export function Hero() {
   const navigate = useNavigate();
+
 
   function handleAddService() {
     navigate("/services");
@@ -22,7 +27,8 @@ export function Hero() {
   return (
     <HeroContainer>
       <HeroContent>
-        <IntroTitle data-aos="fade-up">
+        <Reveal origin="top">
+        <IntroTitle>
           <span>SOYEZ LES BIENVENUS CHEZ NOUS 👋</span>
           <h1>Le centre d’esthétique fait pour vous</h1>
           <p>
@@ -33,9 +39,12 @@ export function Hero() {
             <CalendarCheck size={32} />
             PLANIFIER VOTRE RENDEZ-VOUS
           </button>
-        </IntroTitle>
-        <ImageContainer data-aos="fade-left">
-          <img src={womanImg} alt="" className="womanImg" loading="lazy" />
+        </IntroTitle></Reveal>
+        
+        
+        <ImageContainer>
+      
+          <LazyLoadImage src={womanImg} alt="" className="womanImg" loading="lazy" effect="blur" placeholderSrc="red" width="100%" height="100%"  />
         </ImageContainer>
       </HeroContent>
     </HeroContainer>

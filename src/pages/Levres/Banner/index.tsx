@@ -6,7 +6,7 @@ export function Banner() {
     <BannerContainer>
       <h1>Lèvres</h1>
       <LazyLoadImage
-        effect="black-and-white"
+        effect="blur"
         height="100%"
         src="/sourcils/LevresBannerImg.png"
         alt=""

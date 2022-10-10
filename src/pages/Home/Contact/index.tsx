@@ -19,8 +19,7 @@ export function Contact() {
       <ContactContent>
         <div
           className="textContainer"
-          data-aos="fade-left"
-          data-aos-duration="800"
+         
         >
           <h1>Contactez-nous!</h1>
           <div className="contactDiv">
@@ -50,8 +49,7 @@ export function Contact() {
         </div>
         <div
           className="imgContainer"
-          data-aos="fade-right"
-          data-aos-duration="1000"
+
         >
           <img src="/sourcils/gpsImg.png" alt="" />
         </div>
