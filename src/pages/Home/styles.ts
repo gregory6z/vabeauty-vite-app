@@ -4,6 +4,11 @@ export const HomeContainer = styled.div`
   background: ${(props) => props.theme["cyan-100"]};
   width: 100%;
   height: 100%;
+
+  .marcas{
+    height: 15rem;
+    object-fit:cover ;
+  }
 `;
 
 export const AboutUsContainer = styled.div`
@@ -50,6 +55,7 @@ export const AboutUsVaBeauty = styled.div`
 
   @media (max-width: 960px) {
     flex-direction: column;
+    
   }
 
   h1 {
@@ -117,7 +123,7 @@ export const AboutUsVaBeauty = styled.div`
 
     @media (max-width: 960px) {
       margin-top: 2rem;
-      width: 100%;
+      width: 22rem;
     }
   }
 `;
@@ -130,7 +136,7 @@ export const AboutUsValesca = styled.div`
   @media (max-width: 960px) {
     flex-direction: column;
     padding: initial;
-    margin-top: 10rem;
+    margin-block: 8rem;
   }
 
   .imgContainer {
@@ -140,11 +146,12 @@ export const AboutUsValesca = styled.div`
       rgba(237, 185, 185, 0) 100%
     );
     @media (max-width: 960px) {
-      width: 100%;
+      width: 20rem;
       height: 100%;
+
       img {
         width: 100%;
-        height: 100%;
+
       }
     }
 

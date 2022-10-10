@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import ScrollReveal from "scrollreveal"
+
 
 export const HeroContainer = styled.div`
   width: 100%;
@@ -116,7 +116,7 @@ export const IntroTitle = styled.div`
 
     @media (max-width: 1000px) {
       margin: 0 auto;
-      margin-bottom: 8rem;
+      margin-bottom: 2.5rem;
     }
     @media (max-width: 375px) {
       margin-bottom: 5rem;
@@ -139,7 +139,7 @@ export const ImageContainer = styled.div`
   @media (max-width: 1000px) {
     width: 40rem;
     margin: initial;
-    margin-top: 1rem;
+    
     /* height: initial; */
     margin: 0 auto;
   }
@@ -150,7 +150,7 @@ export const ImageContainer = styled.div`
   }
 
   .womanImg {
-    /* filter: drop-shadow(10px 20px 120px ${(props) => props.theme["cyan-200"]}); */
+  
     bottom: 0;
     position: absolute;
     width: 125%;
@@ -160,9 +160,16 @@ export const ImageContainer = styled.div`
       width: 135%;
     }
 
+    @media(min-width: 1000px) {
+      filter: drop-shadow(10px 20px 120px ${(props) => props.theme["cyan-200"]});
+    }
+
     @media (max-width: 1000px) {
       width: 100%;
       height: 100%;
+    
+
+    
 
       object-position: initial;
     }

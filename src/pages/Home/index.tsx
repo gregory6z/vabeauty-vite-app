@@ -71,7 +71,7 @@ export function Home() {
         </AboutUsVaBeauty></Reveal>
       </AboutUsContainer>
       <Reveal origin="top"  delay={200}>
-      <img
+      <img className="marcas"
         src="/sourcils/marcas.svg"
         width="100%"
       

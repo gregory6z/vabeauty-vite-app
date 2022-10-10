@@ -25,6 +25,10 @@ export const ContactContent = styled.div`
       flex-direction: column;
       width: 100%;
       height: initial;
+
+      h1{
+        text-align: center;
+      }
     }
     width: 50%;
     display: flex;
@@ -92,7 +96,7 @@ export const ContactContent = styled.div`
       flex-direction: column;
       width: 100%;
       height: initial;
-      margin-block: 4rem;
+      margin-block: 4rem 8rem;
     }
     flex: 1;
     border-radius: 5px;
