@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import ScrollReveal from "scrollreveal"
+
 export const HeroContainer = styled.div`
   width: 100%;
   /* background: ${(props) => props.theme["cyan-600"]}; */
@@ -148,7 +150,7 @@ export const ImageContainer = styled.div`
   }
 
   .womanImg {
-    filter: drop-shadow(10px 20px 120px ${(props) => props.theme["cyan-200"]});
+    /* filter: drop-shadow(10px 20px 120px ${(props) => props.theme["cyan-200"]}); */
     bottom: 0;
     position: absolute;
     width: 125%;
